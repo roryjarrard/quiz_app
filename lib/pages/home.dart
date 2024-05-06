@@ -17,7 +17,18 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/quiz-logo.png', width: 250),
+            Image.asset(
+              'assets/images/quiz-logo.png',
+              width: 250,
+              color: const Color.fromARGB(150, 255, 255, 255),
+            ),
+            // Opacity(
+            //   opacity: 0.6,
+            //   child: Image.asset(
+            //     'assets/images/quiz-logo.png',
+            //     width: 250,
+            //   ),
+            // ),
             const SizedBox(
               height: 80,
             ),
