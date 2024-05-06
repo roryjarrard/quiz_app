@@ -31,13 +31,11 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            TextButton(
+            OutlinedButton.icon(
               onPressed: () {},
-              child: const Text(
-                'Start Quiz',
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
+              style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+              icon: const Icon(Icons.quiz, color: Colors.white),
+              label: const Text('Start Quiz'),
             ),
           ],
         ),
