@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/components/question_identifier.dart';
 
 class QuestionsSummary extends StatelessWidget {
   const QuestionsSummary(this.summaryData, {super.key});
@@ -17,24 +18,9 @@ class QuestionsSummary extends StatelessWidget {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: data['correct_answer'] == data['user_answer']
-                          ? Colors.green
-                          : Colors.red,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Text(
-                      ((data['question_index'] as int) + 1).toString(),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.black,
-                      ),
-                    ),
+                  QuestionIdentifier(
+                    data['question_index'] as int,
+                    data['correct_answer'] == data['user_answer'],
                   ),
                   const SizedBox(width: 10),
                   Expanded(
