@@ -41,6 +41,11 @@ class ResultsScreen extends StatelessWidget {
           children: [
             Text(
               'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.pink[100],
+              ),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
             QuestionsSummary(summaryData),
