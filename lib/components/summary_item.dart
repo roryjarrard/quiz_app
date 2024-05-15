@@ -11,38 +11,41 @@ class SummaryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        QuestionIdentifier(
-          item['question_index'] as int,
-          item['correct_answer'] == item['user_answer'],
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                item['question'] as String,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                item['user_answer'] as String,
-                style: TextStyle(color: Colors.blue[900]),
-              ),
-              Text(
-                item['correct_answer'] as String,
-                style: const TextStyle(color: Colors.deepPurple),
-              ),
-            ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          QuestionIdentifier(
+            item['question_index'] as int,
+            item['correct_answer'] == item['user_answer'],
           ),
-        ),
-      ],
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item['question'] as String,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  item['user_answer'] as String,
+                  style: TextStyle(color: Colors.blue[900]),
+                ),
+                Text(
+                  item['correct_answer'] as String,
+                  style: const TextStyle(color: Colors.deepPurple),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
